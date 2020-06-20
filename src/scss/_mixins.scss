@@ -1,0 +1,27 @@
+@mixin font($ff: inherit, $fz: inherit, $fc: inherit, $fw: 400, $lh: 1.6) {
+    font-family: $ff;
+    font-size: $fz;
+    color: $fc;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin posA($top: 50%, $left: 50%, $delta_x: -50%, $delta_y: -50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($delta_x, $delta_y);
+}
+
+@mixin tr {
+    transition: all .4s ease-in;
+}
+
+@mixin hover {
+    @include tr;
+    &:hover,
+    &:focus,
+    &:active {
+        @content
+    }
+}
